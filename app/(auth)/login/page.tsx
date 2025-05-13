@@ -9,11 +9,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
+import { signIn } from "next-auth/react";
 
 export default function SignInPage() {
   const handleGoogleSignIn = () => {
-    // Replace this with your auth logic (e.g., next-auth signIn("google"))
-    console.log("Google Sign-In clicked");
+    signIn("google", { callbackUrl: "/dashboard" });
   };
 
   return (
